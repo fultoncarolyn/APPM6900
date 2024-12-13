@@ -1,0 +1,51 @@
+
+R version 4.4.2 (2024-10-31) -- "Pile of Leaves"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: aarch64-apple-darwin20
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[R.app GUI 1.81 (8462) aarch64-apple-darwin20]
+
+[Workspace restored from /Users/carolynfulton/.RData]
+[History restored from /Users/carolynfulton/.Rapp.history]
+
+> tosses = rbinom(n=10,size=1,prob=0.5)
+> mean(tosses)
+[1] 0.4
+> tosses = rbinom(n=5000,size=1,prob=0.5)
+> means = sapply(1:5000,function(x) mean(tosses[1:x]))
+> plot(means,ty='l',ylim=c(0,1),xlab='toss',ylab='mean of tosses')
+> abline(h=0.5,lty='dashed')
+> plot(means,ty='n', ylim=c(0,1),xlab='',ylab='',axes=FALSE,lwd=2)
+> sample_pois=sapply(1:10000,function(x) rpois(1000,0.6))
+> sample_exp=sapply(1:10000, function(x) rexp(1000,0.6))
+> mean_pois=colMeans(sample_pois)
+> mean_exp=colMeans(sample_exp)
+> plot(density(mean_pois))
+> plot(density(mean_exp))
+> line(density(mean_pois),col = 'orange')
+Error in line(density(mean_pois), col = "orange") : 
+  unused argument (col = "orange")
+> line(density(mean_pois),col = 'yellow')
+Error in line(density(mean_pois), col = "yellow") : 
+  unused argument (col = "yellow")
+> line(density(mean_pois),col = 'green')
+Error in line(density(mean_pois), col = "green") : 
+  unused argument (col = "green")
+> line(density(mean_pois),col = "green")
+Error in line(density(mean_pois), col = "green") : 
+  unused argument (col = "green")
+> 

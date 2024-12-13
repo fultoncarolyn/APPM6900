@@ -1,0 +1,656 @@
+
+R version 4.4.2 (2024-10-31) -- "Pile of Leaves"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: aarch64-apple-darwin20
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[R.app GUI 1.81 (8462) aarch64-apple-darwin20]
+
+[Workspace restored from /Users/carolynfulton/.RData]
+[History restored from /Users/carolynfulton/.Rapp.history]
+
+> schools_dat=list(J=8,y=c(28,8,-3,7,-1,1,18,12),sigma=c(15,10,16,11,9,11,10,18))
+> require(rstan)
+Loading required package: rstan
+Loading required package: StanHeaders
+
+rstan version 2.32.6 (Stan version 2.32.2)
+
+For execution on a local, multicore CPU with excess RAM we recommend calling
+options(mc.cores = parallel::detectCores()).
+To avoid recompilation of unchanged Stan programs, we recommend calling
+rstan_options(auto_write = TRUE)
+For within-chain threading using `reduce_sum()` or `map_rect()` Stan functions,
+change `threads_per_chain` option:
+rstan_options(threads_per_chain = 1)
+
+> fit = stan(file = '/Users/carolynfulton/APPM6900_Stan/schoolmodel.stan', data = schools_dat, cahins = 4, iter =20)
+Error: passing unknown arguments: cahins.
+> fit = stan(file = '/Users/carolynfulton/APPM6900_Stan/schoolmodel.stan', data = schools_dat, chains = 4, iter =20)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
+Chain 1: 
+Chain 1: Gradient evaluation took 3e-05 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.3 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: WARNING: No variance estimation is
+Chain 1:          performed for num_warmup < 20
+Chain 1: 
+Chain 1: Iteration:  1 / 20 [  5%]  (Warmup)
+Chain 1: Iteration:  2 / 20 [ 10%]  (Warmup)
+Chain 1: Iteration:  4 / 20 [ 20%]  (Warmup)
+Chain 1: Iteration:  6 / 20 [ 30%]  (Warmup)
+Chain 1: Iteration:  8 / 20 [ 40%]  (Warmup)
+Chain 1: Iteration: 10 / 20 [ 50%]  (Warmup)
+Chain 1: Iteration: 11 / 20 [ 55%]  (Sampling)
+Chain 1: Iteration: 12 / 20 [ 60%]  (Sampling)
+Chain 1: Iteration: 14 / 20 [ 70%]  (Sampling)
+Chain 1: Iteration: 16 / 20 [ 80%]  (Sampling)
+Chain 1: Iteration: 18 / 20 [ 90%]  (Sampling)
+Chain 1: Iteration: 20 / 20 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 0.001 seconds (Warm-up)
+Chain 1:                0.002 seconds (Sampling)
+Chain 1:                0.003 seconds (Total)
+Chain 1: 
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
+Chain 2: 
+Chain 2: Gradient evaluation took 1e-06 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.01 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 2: WARNING: No variance estimation is
+Chain 2:          performed for num_warmup < 20
+Chain 2: 
+Chain 2: Iteration:  1 / 20 [  5%]  (Warmup)
+Chain 2: Iteration:  2 / 20 [ 10%]  (Warmup)
+Chain 2: Iteration:  4 / 20 [ 20%]  (Warmup)
+Chain 2: Iteration:  6 / 20 [ 30%]  (Warmup)
+Chain 2: Iteration:  8 / 20 [ 40%]  (Warmup)
+Chain 2: Iteration: 10 / 20 [ 50%]  (Warmup)
+Chain 2: Iteration: 11 / 20 [ 55%]  (Sampling)
+Chain 2: Iteration: 12 / 20 [ 60%]  (Sampling)
+Chain 2: Iteration: 14 / 20 [ 70%]  (Sampling)
+Chain 2: Iteration: 16 / 20 [ 80%]  (Sampling)
+Chain 2: Iteration: 18 / 20 [ 90%]  (Sampling)
+Chain 2: Iteration: 20 / 20 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 0.008 seconds (Warm-up)
+Chain 2:                0.002 seconds (Sampling)
+Chain 2:                0.01 seconds (Total)
+Chain 2: 
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 3).
+Chain 3: 
+Chain 3: Gradient evaluation took 1e-06 seconds
+Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.01 seconds.
+Chain 3: Adjust your expectations accordingly!
+Chain 3: 
+Chain 3: 
+Chain 3: WARNING: No variance estimation is
+Chain 3:          performed for num_warmup < 20
+Chain 3: 
+Chain 3: Iteration:  1 / 20 [  5%]  (Warmup)
+Chain 3: Iteration:  2 / 20 [ 10%]  (Warmup)
+Chain 3: Iteration:  4 / 20 [ 20%]  (Warmup)
+Chain 3: Iteration:  6 / 20 [ 30%]  (Warmup)
+Chain 3: Iteration:  8 / 20 [ 40%]  (Warmup)
+Chain 3: Iteration: 10 / 20 [ 50%]  (Warmup)
+Chain 3: Iteration: 11 / 20 [ 55%]  (Sampling)
+Chain 3: Iteration: 12 / 20 [ 60%]  (Sampling)
+Chain 3: Iteration: 14 / 20 [ 70%]  (Sampling)
+Chain 3: Iteration: 16 / 20 [ 80%]  (Sampling)
+Chain 3: Iteration: 18 / 20 [ 90%]  (Sampling)
+Chain 3: Iteration: 20 / 20 [100%]  (Sampling)
+Chain 3: 
+Chain 3:  Elapsed Time: 0.002 seconds (Warm-up)
+Chain 3:                0.002 seconds (Sampling)
+Chain 3:                0.004 seconds (Total)
+Chain 3: 
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 4).
+Chain 4: 
+Chain 4: Gradient evaluation took 1e-06 seconds
+Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.01 seconds.
+Chain 4: Adjust your expectations accordingly!
+Chain 4: 
+Chain 4: 
+Chain 4: WARNING: No variance estimation is
+Chain 4:          performed for num_warmup < 20
+Chain 4: 
+Chain 4: Iteration:  1 / 20 [  5%]  (Warmup)
+Chain 4: Iteration:  2 / 20 [ 10%]  (Warmup)
+Chain 4: Iteration:  4 / 20 [ 20%]  (Warmup)
+Chain 4: Iteration:  6 / 20 [ 30%]  (Warmup)
+Chain 4: Iteration:  8 / 20 [ 40%]  (Warmup)
+Chain 4: Iteration: 10 / 20 [ 50%]  (Warmup)
+Chain 4: Iteration: 11 / 20 [ 55%]  (Sampling)
+Chain 4: Iteration: 12 / 20 [ 60%]  (Sampling)
+Chain 4: Iteration: 14 / 20 [ 70%]  (Sampling)
+Chain 4: Iteration: 16 / 20 [ 80%]  (Sampling)
+Chain 4: Iteration: 18 / 20 [ 90%]  (Sampling)
+Chain 4: Iteration: 20 / 20 [100%]  (Sampling)
+Chain 4: 
+Chain 4:  Elapsed Time: 0.002 seconds (Warm-up)
+Chain 4:                0.002 seconds (Sampling)
+Chain 4:                0.004 seconds (Total)
+Chain 4: 
+Warning messages:
+1: The largest R-hat is 1.65, indicating chains have not mixed.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#r-hat 
+2: Bulk Effective Samples Size (ESS) is too low, indicating posterior means and medians may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#bulk-ess 
+3: Tail Effective Samples Size (ESS) is too low, indicating posterior variances and tail quantiles may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#tail-ess 
+> params = extract(fit, permuted=FALSE, inc_warmup=TRUE)
+> plot(c(-5,25),c(-5,25), ty='n', xlab='mu',ylab='tau')
+> lines(params[,'chain:1','mu'],params[,'chain:1','tau'], col= 'black', ty='o', pch=20)
+> lines(params[,'chain:2','mu'],params[,'chain:2','tau'], col= 'red', ty='o', pch=20)
+> lines(params[,'chain:3','mu'],params[,'chain:3','tau'], col= 'orange', ty='o', pch=20)
+> lines(params[,'chain:4','mu'],params[,'chain:4','tau'], col= 'yellow', ty='o', pch=20)
+> traceplot(fit,pars=c('mu','tau'))
+> fit = stan(file = '/Users/carolynfulton/APPM6900_Stan/schoolmodel.stan', data = schools_dat, chains = 4, iter =1000)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
+Chain 1: 
+Chain 1: Gradient evaluation took 5e-06 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.05 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:   1 / 1000 [  0%]  (Warmup)
+Chain 1: Iteration: 100 / 1000 [ 10%]  (Warmup)
+Chain 1: Iteration: 200 / 1000 [ 20%]  (Warmup)
+Chain 1: Iteration: 300 / 1000 [ 30%]  (Warmup)
+Chain 1: Iteration: 400 / 1000 [ 40%]  (Warmup)
+Chain 1: Iteration: 500 / 1000 [ 50%]  (Warmup)
+Chain 1: Iteration: 501 / 1000 [ 50%]  (Sampling)
+Chain 1: Iteration: 600 / 1000 [ 60%]  (Sampling)
+Chain 1: Iteration: 700 / 1000 [ 70%]  (Sampling)
+Chain 1: Iteration: 800 / 1000 [ 80%]  (Sampling)
+Chain 1: Iteration: 900 / 1000 [ 90%]  (Sampling)
+Chain 1: Iteration: 1000 / 1000 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 0.015 seconds (Warm-up)
+Chain 1:                0.008 seconds (Sampling)
+Chain 1:                0.023 seconds (Total)
+Chain 1: 
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
+Chain 2: 
+Chain 2: Gradient evaluation took 1e-06 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.01 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 2: Iteration:   1 / 1000 [  0%]  (Warmup)
+Chain 2: Iteration: 100 / 1000 [ 10%]  (Warmup)
+Chain 2: Iteration: 200 / 1000 [ 20%]  (Warmup)
+Chain 2: Iteration: 300 / 1000 [ 30%]  (Warmup)
+Chain 2: Iteration: 400 / 1000 [ 40%]  (Warmup)
+Chain 2: Iteration: 500 / 1000 [ 50%]  (Warmup)
+Chain 2: Iteration: 501 / 1000 [ 50%]  (Sampling)
+Chain 2: Iteration: 600 / 1000 [ 60%]  (Sampling)
+Chain 2: Iteration: 700 / 1000 [ 70%]  (Sampling)
+Chain 2: Iteration: 800 / 1000 [ 80%]  (Sampling)
+Chain 2: Iteration: 900 / 1000 [ 90%]  (Sampling)
+Chain 2: Iteration: 1000 / 1000 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 0.016 seconds (Warm-up)
+Chain 2:                0.012 seconds (Sampling)
+Chain 2:                0.028 seconds (Total)
+Chain 2: 
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 3).
+Chain 3: 
+Chain 3: Gradient evaluation took 1e-06 seconds
+Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.01 seconds.
+Chain 3: Adjust your expectations accordingly!
+Chain 3: 
+Chain 3: 
+Chain 3: Iteration:   1 / 1000 [  0%]  (Warmup)
+Chain 3: Iteration: 100 / 1000 [ 10%]  (Warmup)
+Chain 3: Iteration: 200 / 1000 [ 20%]  (Warmup)
+Chain 3: Iteration: 300 / 1000 [ 30%]  (Warmup)
+Chain 3: Iteration: 400 / 1000 [ 40%]  (Warmup)
+Chain 3: Iteration: 500 / 1000 [ 50%]  (Warmup)
+Chain 3: Iteration: 501 / 1000 [ 50%]  (Sampling)
+Chain 3: Iteration: 600 / 1000 [ 60%]  (Sampling)
+Chain 3: Iteration: 700 / 1000 [ 70%]  (Sampling)
+Chain 3: Iteration: 800 / 1000 [ 80%]  (Sampling)
+Chain 3: Iteration: 900 / 1000 [ 90%]  (Sampling)
+Chain 3: Iteration: 1000 / 1000 [100%]  (Sampling)
+Chain 3: 
+Chain 3:  Elapsed Time: 0.019 seconds (Warm-up)
+Chain 3:                0.007 seconds (Sampling)
+Chain 3:                0.026 seconds (Total)
+Chain 3: 
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 4).
+Chain 4: 
+Chain 4: Gradient evaluation took 1e-06 seconds
+Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.01 seconds.
+Chain 4: Adjust your expectations accordingly!
+Chain 4: 
+Chain 4: 
+Chain 4: Iteration:   1 / 1000 [  0%]  (Warmup)
+Chain 4: Iteration: 100 / 1000 [ 10%]  (Warmup)
+Chain 4: Iteration: 200 / 1000 [ 20%]  (Warmup)
+Chain 4: Iteration: 300 / 1000 [ 30%]  (Warmup)
+Chain 4: Iteration: 400 / 1000 [ 40%]  (Warmup)
+Chain 4: Iteration: 500 / 1000 [ 50%]  (Warmup)
+Chain 4: Iteration: 501 / 1000 [ 50%]  (Sampling)
+Chain 4: Iteration: 600 / 1000 [ 60%]  (Sampling)
+Chain 4: Iteration: 700 / 1000 [ 70%]  (Sampling)
+Chain 4: Iteration: 800 / 1000 [ 80%]  (Sampling)
+Chain 4: Iteration: 900 / 1000 [ 90%]  (Sampling)
+Chain 4: Iteration: 1000 / 1000 [100%]  (Sampling)
+Chain 4: 
+Chain 4:  Elapsed Time: 0.018 seconds (Warm-up)
+Chain 4:                0.011 seconds (Sampling)
+Chain 4:                0.029 seconds (Total)
+Chain 4: 
+Warning messages:
+1: There were 29 divergent transitions after warmup. See
+https://mc-stan.org/misc/warnings.html#divergent-transitions-after-warmup
+to find out why this is a problem and how to eliminate them. 
+2: Examine the pairs() plot to diagnose sampling problems
+ 
+3: Bulk Effective Samples Size (ESS) is too low, indicating posterior means and medians may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#bulk-ess 
+4: Tail Effective Samples Size (ESS) is too low, indicating posterior variances and tail quantiles may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#tail-ess 
+> traceplot(fit,pars=c('mu','tau'))
+> print(fit)
+Inference for Stan model: anon_model.
+4 chains, each with iter=1000; warmup=500; thin=1; 
+post-warmup draws per chain=500, total post-warmup draws=2000.
+
+           mean se_mean   sd   2.5%    25%    50%    75% 97.5% n_eff Rhat
+theta[1]   6.38    0.34 5.84  -3.52   2.56   5.85   9.30 20.24   289 1.02
+theta[2]   4.98    0.22 4.79  -4.41   1.96   4.91   8.07 14.60   490 1.02
+theta[3]   3.92    0.24 5.24  -7.68   1.02   3.88   7.09 14.38   486 1.01
+theta[4]   4.77    0.26 4.89  -4.73   1.53   4.58   7.80 15.15   358 1.02
+theta[5]   3.43    0.20 4.62  -6.70   0.77   3.54   6.48 11.73   544 1.02
+theta[6]   3.93    0.21 4.96  -6.49   1.06   3.93   6.98 13.65   574 1.03
+theta[7]   6.41    0.27 5.23  -2.35   2.87   5.75   9.41 18.83   365 1.01
+theta[8]   4.85    0.25 5.69  -6.15   1.36   4.67   8.26 16.92   507 1.01
+mu         4.34    0.25 3.31  -1.78   1.94   4.25   6.61 10.73   181 1.04
+tau        4.13    0.22 3.22   0.86   1.80   3.23   5.44 12.26   220 1.03
+lp__     -15.85    0.56 5.68 -26.63 -20.01 -16.10 -11.61 -5.91   104 1.05
+
+Samples were drawn using NUTS(diag_e) at Fri Dec 13 12:40:30 2024.
+For each parameter, n_eff is a crude measure of effective sample size,
+and Rhat is the potential scale reduction factor on split chains (at 
+convergence, Rhat=1).
+> neff =summary(fit)$summary[,'n_eff']
+> neff/2000
+  theta[1]   theta[2]   theta[3]   theta[4]   theta[5]   theta[6]   theta[7]   theta[8]         mu        tau       lp__ 
+0.14453636 0.24523978 0.24282464 0.17906763 0.27180293 0.28681874 0.18250708 0.25330915 0.09053225 0.10979528 0.05198376 
+> monitor(extract(fit,permuted=FALSE,inc_warmup=FALSE))
+Inference for the input samples (4 chains: each with iter = 500; warmup = 250):
+
+            Q5   Q50  Q95  Mean  SD  Rhat Bulk_ESS Tail_ESS
+theta[1]  -0.9   6.1 16.5   6.5 5.4  1.03      123      528
+theta[2]  -2.1   5.4 12.4   5.4 4.5  1.04      172      418
+theta[3]  -3.9   4.5 12.0   4.3 5.0  1.03      189      506
+theta[4]  -1.6   5.2 12.0   5.2 4.6  1.03      121      582
+theta[5]  -3.1   4.2 10.7   3.9 4.5  1.03      196      435
+theta[6]  -2.3   4.4 11.9   4.6 4.6  1.04      125      385
+theta[7]  -0.5   6.1 15.5   6.5 5.0  1.02      147      392
+theta[8]  -3.3   5.2 13.8   5.3 5.7  1.02      203      382
+mu        -0.4   4.9 10.3   4.8 3.2  1.07       51      108
+tau        0.9   2.7  9.1   3.7 3.0  1.03       71       61
+lp__     -24.2 -14.7 -6.1 -14.8 5.8  1.03       70       93
+
+For each parameter, Bulk_ESS and Tail_ESS are crude measures of 
+effective sample size for bulk and tail quantities respectively (an ESS > 100 
+per chain is considered good), and Rhat is the potential scale reduction 
+factor on rank normalized split chains (at convergence, Rhat <= 1.05).
+> fit = stan(file = '/Users/carolynfulton/APPM6900_Stan/schoolmodel.stan', data = schools_dat, chains = 4, iter =10000, warmup=500)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
+Chain 1: 
+Chain 1: Gradient evaluation took 4e-06 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.04 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:    1 / 10000 [  0%]  (Warmup)
+Chain 1: Iteration:  501 / 10000 [  5%]  (Sampling)
+Chain 1: Iteration: 1500 / 10000 [ 15%]  (Sampling)
+Chain 1: Iteration: 2500 / 10000 [ 25%]  (Sampling)
+Chain 1: Iteration: 3500 / 10000 [ 35%]  (Sampling)
+Chain 1: Iteration: 4500 / 10000 [ 45%]  (Sampling)
+Chain 1: Iteration: 5500 / 10000 [ 55%]  (Sampling)
+Chain 1: Iteration: 6500 / 10000 [ 65%]  (Sampling)
+Chain 1: Iteration: 7500 / 10000 [ 75%]  (Sampling)
+Chain 1: Iteration: 8500 / 10000 [ 85%]  (Sampling)
+Chain 1: Iteration: 9500 / 10000 [ 95%]  (Sampling)
+Chain 1: Iteration: 10000 / 10000 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 0.015 seconds (Warm-up)
+Chain 1:                0.125 seconds (Sampling)
+Chain 1:                0.14 seconds (Total)
+Chain 1: 
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
+Chain 2: 
+Chain 2: Gradient evaluation took 1e-06 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.01 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 2: Iteration:    1 / 10000 [  0%]  (Warmup)
+Chain 2: Iteration:  501 / 10000 [  5%]  (Sampling)
+Chain 2: Iteration: 1500 / 10000 [ 15%]  (Sampling)
+Chain 2: Iteration: 2500 / 10000 [ 25%]  (Sampling)
+Chain 2: Iteration: 3500 / 10000 [ 35%]  (Sampling)
+Chain 2: Iteration: 4500 / 10000 [ 45%]  (Sampling)
+Chain 2: Iteration: 5500 / 10000 [ 55%]  (Sampling)
+Chain 2: Iteration: 6500 / 10000 [ 65%]  (Sampling)
+Chain 2: Iteration: 7500 / 10000 [ 75%]  (Sampling)
+Chain 2: Iteration: 8500 / 10000 [ 85%]  (Sampling)
+Chain 2: Iteration: 9500 / 10000 [ 95%]  (Sampling)
+Chain 2: Iteration: 10000 / 10000 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 0.014 seconds (Warm-up)
+Chain 2:                0.185 seconds (Sampling)
+Chain 2:                0.199 seconds (Total)
+Chain 2: 
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 3).
+Chain 3: 
+Chain 3: Gradient evaluation took 1e-06 seconds
+Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.01 seconds.
+Chain 3: Adjust your expectations accordingly!
+Chain 3: 
+Chain 3: 
+Chain 3: Iteration:    1 / 10000 [  0%]  (Warmup)
+Chain 3: Iteration:  501 / 10000 [  5%]  (Sampling)
+Chain 3: Iteration: 1500 / 10000 [ 15%]  (Sampling)
+Chain 3: Iteration: 2500 / 10000 [ 25%]  (Sampling)
+Chain 3: Iteration: 3500 / 10000 [ 35%]  (Sampling)
+Chain 3: Iteration: 4500 / 10000 [ 45%]  (Sampling)
+Chain 3: Iteration: 5500 / 10000 [ 55%]  (Sampling)
+Chain 3: Iteration: 6500 / 10000 [ 65%]  (Sampling)
+Chain 3: Iteration: 7500 / 10000 [ 75%]  (Sampling)
+Chain 3: Iteration: 8500 / 10000 [ 85%]  (Sampling)
+Chain 3: Iteration: 9500 / 10000 [ 95%]  (Sampling)
+Chain 3: Iteration: 10000 / 10000 [100%]  (Sampling)
+Chain 3: 
+Chain 3:  Elapsed Time: 0.016 seconds (Warm-up)
+Chain 3:                0.195 seconds (Sampling)
+Chain 3:                0.211 seconds (Total)
+Chain 3: 
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 4).
+Chain 4: 
+Chain 4: Gradient evaluation took 1e-06 seconds
+Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.01 seconds.
+Chain 4: Adjust your expectations accordingly!
+Chain 4: 
+Chain 4: 
+Chain 4: Iteration:    1 / 10000 [  0%]  (Warmup)
+Chain 4: Iteration:  501 / 10000 [  5%]  (Sampling)
+Chain 4: Iteration: 1500 / 10000 [ 15%]  (Sampling)
+Chain 4: Iteration: 2500 / 10000 [ 25%]  (Sampling)
+Chain 4: Iteration: 3500 / 10000 [ 35%]  (Sampling)
+Chain 4: Iteration: 4500 / 10000 [ 45%]  (Sampling)
+Chain 4: Iteration: 5500 / 10000 [ 55%]  (Sampling)
+Chain 4: Iteration: 6500 / 10000 [ 65%]  (Sampling)
+Chain 4: Iteration: 7500 / 10000 [ 75%]  (Sampling)
+Chain 4: Iteration: 8500 / 10000 [ 85%]  (Sampling)
+Chain 4: Iteration: 9500 / 10000 [ 95%]  (Sampling)
+Chain 4: Iteration: 10000 / 10000 [100%]  (Sampling)
+Chain 4: 
+Chain 4:  Elapsed Time: 0.024 seconds (Warm-up)
+Chain 4:                0.215 seconds (Sampling)
+Chain 4:                0.239 seconds (Total)
+Chain 4: 
+Warning messages:
+1: There were 1110 divergent transitions after warmup. See
+https://mc-stan.org/misc/warnings.html#divergent-transitions-after-warmup
+to find out why this is a problem and how to eliminate them. 
+2: Examine the pairs() plot to diagnose sampling problems
+ 
+> pairs(fit,pars=c('mu','tau','lp__'))
+Warning messages:
+1: In par(usr) : argument 1 does not name a graphical parameter
+2: In par(usr) : argument 1 does not name a graphical parameter
+3: In par(usr) : argument 1 does not name a graphical parameter
+> fit = stan(file = '/Users/carolynfulton/APPM6900_Stan/schoolmodel.stan', data = schools_dat, chains = 4, iter =10000, warmup=500,control=list(adapt_delta=0.85))
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
+Chain 1: 
+Chain 1: Gradient evaluation took 5e-06 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.05 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:    1 / 10000 [  0%]  (Warmup)
+Chain 1: Iteration:  501 / 10000 [  5%]  (Sampling)
+Chain 1: Iteration: 1500 / 10000 [ 15%]  (Sampling)
+Chain 1: Iteration: 2500 / 10000 [ 25%]  (Sampling)
+Chain 1: Iteration: 3500 / 10000 [ 35%]  (Sampling)
+Chain 1: Iteration: 4500 / 10000 [ 45%]  (Sampling)
+Chain 1: Iteration: 5500 / 10000 [ 55%]  (Sampling)
+Chain 1: Iteration: 6500 / 10000 [ 65%]  (Sampling)
+Chain 1: Iteration: 7500 / 10000 [ 75%]  (Sampling)
+Chain 1: Iteration: 8500 / 10000 [ 85%]  (Sampling)
+Chain 1: Iteration: 9500 / 10000 [ 95%]  (Sampling)
+Chain 1: Iteration: 10000 / 10000 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 0.024 seconds (Warm-up)
+Chain 1:                0.191 seconds (Sampling)
+Chain 1:                0.215 seconds (Total)
+Chain 1: 
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
+Chain 2: 
+Chain 2: Gradient evaluation took 1e-06 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.01 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 2: Iteration:    1 / 10000 [  0%]  (Warmup)
+Chain 2: Iteration:  501 / 10000 [  5%]  (Sampling)
+Chain 2: Iteration: 1500 / 10000 [ 15%]  (Sampling)
+Chain 2: Iteration: 2500 / 10000 [ 25%]  (Sampling)
+Chain 2: Iteration: 3500 / 10000 [ 35%]  (Sampling)
+Chain 2: Iteration: 4500 / 10000 [ 45%]  (Sampling)
+Chain 2: Iteration: 5500 / 10000 [ 55%]  (Sampling)
+Chain 2: Iteration: 6500 / 10000 [ 65%]  (Sampling)
+Chain 2: Iteration: 7500 / 10000 [ 75%]  (Sampling)
+Chain 2: Iteration: 8500 / 10000 [ 85%]  (Sampling)
+Chain 2: Iteration: 9500 / 10000 [ 95%]  (Sampling)
+Chain 2: Iteration: 10000 / 10000 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 0.034 seconds (Warm-up)
+Chain 2:                0.347 seconds (Sampling)
+Chain 2:                0.381 seconds (Total)
+Chain 2: 
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 3).
+Chain 3: 
+Chain 3: Gradient evaluation took 2e-06 seconds
+Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.02 seconds.
+Chain 3: Adjust your expectations accordingly!
+Chain 3: 
+Chain 3: 
+Chain 3: Iteration:    1 / 10000 [  0%]  (Warmup)
+Chain 3: Iteration:  501 / 10000 [  5%]  (Sampling)
+Chain 3: Iteration: 1500 / 10000 [ 15%]  (Sampling)
+Chain 3: Iteration: 2500 / 10000 [ 25%]  (Sampling)
+Chain 3: Iteration: 3500 / 10000 [ 35%]  (Sampling)
+Chain 3: Iteration: 4500 / 10000 [ 45%]  (Sampling)
+Chain 3: Iteration: 5500 / 10000 [ 55%]  (Sampling)
+Chain 3: Iteration: 6500 / 10000 [ 65%]  (Sampling)
+Chain 3: Iteration: 7500 / 10000 [ 75%]  (Sampling)
+Chain 3: Iteration: 8500 / 10000 [ 85%]  (Sampling)
+Chain 3: Iteration: 9500 / 10000 [ 95%]  (Sampling)
+Chain 3: Iteration: 10000 / 10000 [100%]  (Sampling)
+Chain 3: 
+Chain 3:  Elapsed Time: 0.014 seconds (Warm-up)
+Chain 3:                0.154 seconds (Sampling)
+Chain 3:                0.168 seconds (Total)
+Chain 3: 
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 4).
+Chain 4: 
+Chain 4: Gradient evaluation took 4e-06 seconds
+Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.04 seconds.
+Chain 4: Adjust your expectations accordingly!
+Chain 4: 
+Chain 4: 
+Chain 4: Iteration:    1 / 10000 [  0%]  (Warmup)
+Chain 4: Iteration:  501 / 10000 [  5%]  (Sampling)
+Chain 4: Iteration: 1500 / 10000 [ 15%]  (Sampling)
+Chain 4: Iteration: 2500 / 10000 [ 25%]  (Sampling)
+Chain 4: Iteration: 3500 / 10000 [ 35%]  (Sampling)
+Chain 4: Iteration: 4500 / 10000 [ 45%]  (Sampling)
+Chain 4: Iteration: 5500 / 10000 [ 55%]  (Sampling)
+Chain 4: Iteration: 6500 / 10000 [ 65%]  (Sampling)
+Chain 4: Iteration: 7500 / 10000 [ 75%]  (Sampling)
+Chain 4: Iteration: 8500 / 10000 [ 85%]  (Sampling)
+Chain 4: Iteration: 9500 / 10000 [ 95%]  (Sampling)
+Chain 4: Iteration: 10000 / 10000 [100%]  (Sampling)
+Chain 4: 
+Chain 4:  Elapsed Time: 0.014 seconds (Warm-up)
+Chain 4:                0.669 seconds (Sampling)
+Chain 4:                0.683 seconds (Total)
+Chain 4: 
+Warning messages:
+1: There were 790 divergent transitions after warmup. See
+https://mc-stan.org/misc/warnings.html#divergent-transitions-after-warmup
+to find out why this is a problem and how to eliminate them. 
+2: Examine the pairs() plot to diagnose sampling problems
+ 
+> get_num_divergent(fit)
+[1] 790
+> fit = stan(file = '/Users/carolynfulton/APPM6900_Stan/newschoolmodel.stan', data = schools_dat, chains = 4, iter =10000, warmup=500,control=list(adapt_delta=0.95))
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
+Chain 1: 
+Chain 1: Gradient evaluation took 4e-05 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.4 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:    1 / 10000 [  0%]  (Warmup)
+Chain 1: Iteration:  501 / 10000 [  5%]  (Sampling)
+Chain 1: Iteration: 1500 / 10000 [ 15%]  (Sampling)
+Chain 1: Iteration: 2500 / 10000 [ 25%]  (Sampling)
+Chain 1: Iteration: 3500 / 10000 [ 35%]  (Sampling)
+Chain 1: Iteration: 4500 / 10000 [ 45%]  (Sampling)
+Chain 1: Iteration: 5500 / 10000 [ 55%]  (Sampling)
+Chain 1: Iteration: 6500 / 10000 [ 65%]  (Sampling)
+Chain 1: Iteration: 7500 / 10000 [ 75%]  (Sampling)
+Chain 1: Iteration: 8500 / 10000 [ 85%]  (Sampling)
+Chain 1: Iteration: 9500 / 10000 [ 95%]  (Sampling)
+Chain 1: Iteration: 10000 / 10000 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 0.04 seconds (Warm-up)
+Chain 1:                0.318 seconds (Sampling)
+Chain 1:                0.358 seconds (Total)
+Chain 1: 
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
+Chain 2: 
+Chain 2: Gradient evaluation took 2e-06 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.02 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 2: Iteration:    1 / 10000 [  0%]  (Warmup)
+Chain 2: Iteration:  501 / 10000 [  5%]  (Sampling)
+Chain 2: Iteration: 1500 / 10000 [ 15%]  (Sampling)
+Chain 2: Iteration: 2500 / 10000 [ 25%]  (Sampling)
+Chain 2: Iteration: 3500 / 10000 [ 35%]  (Sampling)
+Chain 2: Iteration: 4500 / 10000 [ 45%]  (Sampling)
+Chain 2: Iteration: 5500 / 10000 [ 55%]  (Sampling)
+Chain 2: Iteration: 6500 / 10000 [ 65%]  (Sampling)
+Chain 2: Iteration: 7500 / 10000 [ 75%]  (Sampling)
+Chain 2: Iteration: 8500 / 10000 [ 85%]  (Sampling)
+Chain 2: Iteration: 9500 / 10000 [ 95%]  (Sampling)
+Chain 2: Iteration: 10000 / 10000 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 0.009 seconds (Warm-up)
+Chain 2:                0.182 seconds (Sampling)
+Chain 2:                0.191 seconds (Total)
+Chain 2: 
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 3).
+Chain 3: 
+Chain 3: Gradient evaluation took 2e-06 seconds
+Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.02 seconds.
+Chain 3: Adjust your expectations accordingly!
+Chain 3: 
+Chain 3: 
+Chain 3: Iteration:    1 / 10000 [  0%]  (Warmup)
+Chain 3: Iteration:  501 / 10000 [  5%]  (Sampling)
+Chain 3: Iteration: 1500 / 10000 [ 15%]  (Sampling)
+Chain 3: Iteration: 2500 / 10000 [ 25%]  (Sampling)
+Chain 3: Iteration: 3500 / 10000 [ 35%]  (Sampling)
+Chain 3: Iteration: 4500 / 10000 [ 45%]  (Sampling)
+Chain 3: Iteration: 5500 / 10000 [ 55%]  (Sampling)
+Chain 3: Iteration: 6500 / 10000 [ 65%]  (Sampling)
+Chain 3: Iteration: 7500 / 10000 [ 75%]  (Sampling)
+Chain 3: Iteration: 8500 / 10000 [ 85%]  (Sampling)
+Chain 3: Iteration: 9500 / 10000 [ 95%]  (Sampling)
+Chain 3: Iteration: 10000 / 10000 [100%]  (Sampling)
+Chain 3: 
+Chain 3:  Elapsed Time: 0.01 seconds (Warm-up)
+Chain 3:                0.172 seconds (Sampling)
+Chain 3:                0.182 seconds (Total)
+Chain 3: 
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 4).
+Chain 4: 
+Chain 4: Gradient evaluation took 2e-06 seconds
+Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.02 seconds.
+Chain 4: Adjust your expectations accordingly!
+Chain 4: 
+Chain 4: 
+Chain 4: Iteration:    1 / 10000 [  0%]  (Warmup)
+Chain 4: Iteration:  501 / 10000 [  5%]  (Sampling)
+Chain 4: Iteration: 1500 / 10000 [ 15%]  (Sampling)
+Chain 4: Iteration: 2500 / 10000 [ 25%]  (Sampling)
+Chain 4: Iteration: 3500 / 10000 [ 35%]  (Sampling)
+Chain 4: Iteration: 4500 / 10000 [ 45%]  (Sampling)
+Chain 4: Iteration: 5500 / 10000 [ 55%]  (Sampling)
+Chain 4: Iteration: 6500 / 10000 [ 65%]  (Sampling)
+Chain 4: Iteration: 7500 / 10000 [ 75%]  (Sampling)
+Chain 4: Iteration: 8500 / 10000 [ 85%]  (Sampling)
+Chain 4: Iteration: 9500 / 10000 [ 95%]  (Sampling)
+Chain 4: Iteration: 10000 / 10000 [100%]  (Sampling)
+Chain 4: 
+Chain 4:  Elapsed Time: 0.011 seconds (Warm-up)
+Chain 4:                0.172 seconds (Sampling)
+Chain 4:                0.183 seconds (Total)
+Chain 4: 
+> get_num_divergent(fit)
+[1] 0
+> 
